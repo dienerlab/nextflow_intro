@@ -19,3 +19,13 @@
 2024-03-22 03:22:26	1.6s	wise_faggin	OK	7f91f2ee9930d993918cfd7f3b8f58b9	ac955928-72dd-4d8e-ab24-973590e4de21	nextflow run -resume main.nf
 2024-03-22 03:23:07	2.2s	mad_borg	OK	7f91f2ee9930d993918cfd7f3b8f58b9	ac955928-72dd-4d8e-ab24-973590e4de21	nextflow run -resume main.nf -with-report
 2024-03-22 03:24:02	2.9s	thirsty_bhabha	OK	7f91f2ee9930d993918cfd7f3b8f58b9	3b8d3d6d-7f4f-41c9-a0a4-1e40fd0aa99f	nextflow run main.nf -with-report
+2024-05-15 10:17:08	2.1s	magical_mirzakhani	OK	7f91f2ee9930d993918cfd7f3b8f58b9	56679358-0cb6-4caa-ac34-88767ad9570c	nextflow run main.nf
+2024-05-15 10:17:18	2.1s	astonishing_jepsen	OK	7f91f2ee9930d993918cfd7f3b8f58b9	56679358-0cb6-4caa-ac34-88767ad9570c	nextflow run -resume main.nf
+2024-05-15 10:17:50	1.3s	lethal_turing	OK	5d5b6ef734114e2c9de3600b4d925498	56679358-0cb6-4caa-ac34-88767ad9570c	nextflow run -resume main.nf
+2024-05-15 10:18:07	1.6s	admiring_cray	OK	7f91f2ee9930d993918cfd7f3b8f58b9	56679358-0cb6-4caa-ac34-88767ad9570c	nextflow run -resume main.nf
+2024-05-15 10:18:22	2s	big_swirles	OK	7f91f2ee9930d993918cfd7f3b8f58b9	56679358-0cb6-4caa-ac34-88767ad9570c	nextflow run -resume main.nf
+2024-05-15 10:18:37	2.2s	admiring_ritchie	OK	7f91f2ee9930d993918cfd7f3b8f58b9	a1686c0c-efa1-4c8c-89ca-024c68669463	nextflow run main.nf
+2024-05-15 10:19:42	1.6s	sharp_avogadro	OK	7f91f2ee9930d993918cfd7f3b8f58b9	a1686c0c-efa1-4c8c-89ca-024c68669463	nextflow run -resume main.nf
+2024-05-15 10:19:59	1.6s	naughty_borg	OK	7f91f2ee9930d993918cfd7f3b8f58b9	a1686c0c-efa1-4c8c-89ca-024c68669463	nextflow run -resume main.nf
+2024-05-15 10:20:55	1.9s	serene_montalcini	OK	7f91f2ee9930d993918cfd7f3b8f58b9	a1686c0c-efa1-4c8c-89ca-024c68669463	nextflow run -resume main.nf -with-dag graph.png
+2024-05-15 10:55:29	3.1s	focused_agnesi	OK	7f91f2ee9930d993918cfd7f3b8f58b9	a1686c0c-efa1-4c8c-89ca-024c68669463	nextflow run -resume main.nf -with-report report.html
