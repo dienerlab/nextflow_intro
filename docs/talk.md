@@ -155,7 +155,7 @@ You can either configure the executor in the nextflow config or directly in the 
 definition.
 
 ```bash []
-nextflow run main.nf -resume -profile=slurm
+nextflow run main.nf -resume -profile slurm
 ```
 
 ---
@@ -166,7 +166,7 @@ Nextflow can use several package managers/container engines for software and you
 have even multiple ones for the same pipeline.
 
 ```bash []
-# Use an existing conda environment
+# Use an existing conda environment (just an example here)
 nextflow run main.nf -resume -with-conda "~/miniforge3/envs/metagenomics"
 
 # Use singularity with a docker image from the web
@@ -180,8 +180,10 @@ nextflow run main.nf -resume -with-singularity python:3
 Either create an HTML report:
 
 ```bash []
-nextflow run main.nf -resume -with-report pipeline.html
+nextflow run main.nf -resume -with-report report.html
 ```
+
+This will look [like this](assets/report.html).
 
 Or use Seqera Cloud (old Nextflow Tower) and track it live.
 
