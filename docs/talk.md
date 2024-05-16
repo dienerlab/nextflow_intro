@@ -167,10 +167,10 @@ have even multiple ones for the same pipeline.
 
 ```bash []
 # Use an existing conda environment
-nextflow run main.nf -resume -with-conda="~/miniforge3/envs/metagenomics"
+nextflow run main.nf -resume -with-conda "~/miniforge3/envs/metagenomics"
 
 # Use singularity with a docker image from the web
-nextflow run main.nf -resume -with-singularity="python:3"
+nextflow run main.nf -resume -with-singularity python:3
 ```
 
 ---
