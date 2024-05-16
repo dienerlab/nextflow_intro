@@ -31,7 +31,7 @@ process average {
     path("average.txt")
 
     """
-    #!/usr/bin/env python
+    #!/usr/bin/env python3
 
     from statistics import mean, stdev
 
