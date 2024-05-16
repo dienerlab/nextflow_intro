@@ -404,7 +404,7 @@ section.has-dark-background, section.dark {
 .reveal .reveal-toolbar {
   position: absolute;
   left: calc(100% - 300px) !important;
-  top: calc(100% - 62px) !important;
+  top: calc(100% - 44px) !important;
   width: 200px;
   z-index: 2;
 }
@@ -413,7 +413,7 @@ section.has-dark-background, section.dark {
   display: relative;
   bottom: 16px;
   margin-bottom: 4px;
-  background-color: var(--gray);
+  background-color: var(--primary);
   border-color: white;
   color: white;
 }

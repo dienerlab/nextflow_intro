@@ -24,14 +24,14 @@ Slides: https://dienerlab.github.io/nextflow_intro
 ## What is this?
 
 This is not a comprehensive tutorial for the Nextflow language but rather an introduction
-and specific gotchas for using Nextflow on the MedBioNode.
+and specifics for using Nextflow on the MedBioNode.
 
 - Training: https://training.nextflow.io
 - Docs: https://nextflow.io/docs/latest/index.html
 
 ---
 
-## Workflows as Graphs
+## The Data Flow paradigm - Workflows as Graphs
 
 <img src="assets/taxprofiler_tube.png" width="100%">
 
@@ -39,14 +39,14 @@ A (directed) series of computational or data manipulation steps.
 
 ---
 
-## What are workflow management systems
+## What are workflow management systems (WMSs)
 
 A collection of
 
-- a *language* to express complex workflows
+- a *language* to express complex workflow graphs
 - a *resource manager* that can distribute work automatically
-- an *executor* that will run the workflow on a variety of backends (SLUTM, Cloud, local)
-- a *tracking system* that caches results and gives perormance metrics
+- an *executor* that will run the workflow on a variety of back-ends<br>(SLURM, AWS batch, GCP compute, Kubernetes, local)
+- a *monitoring system* that caches results and analyses resource usage
 
 Common WMSs: *Nextflow*, Snakemake, CWL
 
@@ -54,30 +54,33 @@ Common WMSs: *Nextflow*, Snakemake, CWL
 
 <!-- .slide: data-background="var(--primary)" class="dark" -->
 
-## Problems that are solved by workflow management systems
+## Problems that are solved by WMSs
 
-You have a complex analysis pipeline with which you analyzed 1,000 samples already. A
-colaborator sends you 10 additional samples. Which analyses have to be repeated and
+You have a complex analysis pipeline that you applied to 1,000 samples already. A
+collaborator sends you 10 additional samples. *Which analyses have to be repeated* and
 which ones do not?
 
-You analysis performs many parallel steps on the same inputs (functional annotation, binning, etc).
-How do you make sure that all of them run in parallel and are using the computational
-resources efficiently?
+Your analysis performs many parallel steps on the same inputs (functional annotation, binning, etc).
+How do you make sure that all of them run in parallel and are *using the computational resources efficiently*?
 
-Somebody else want to reproduce your analyses. You ran everything on the MedBioNode with
-SLURM but they are using AWS batch with docker containers. How can they run your pipeline?
+Somebody else wants to reproduce your analyses. You ran everything on the MedBioNode with
+SLURM and conda but they are using AWS batch with docker containers.
+How can they *run your pipeline on very different infrastructure*?
 
 ---
 
 ### The Nextflow DSL
 
-Nextflow uses *Groovy* to write pipelines (bit of a disadvantage).
+Nextflow uses a customized *Groovy* to write pipelines (bit of a disadvantage). Actual
+analysis steps can be scripts in any language (Bash, Python, R, etc.)
+
+Has a publishing concept (actual output vs. intermediate files).
 
 <br><br>
 
 ### The Nextflow CLI
 
-Nextflow is run through a single command `nextflow` that is written in JAVA and can be
+Nextflow is run through a single command line interface - *nextflow* - that is written in JAVA and can be
 installed from bioconda for instance.
 
 ---
@@ -99,7 +102,7 @@ Channels and processes get composed into a workflow.
 
 ## Let's get cookin'
 
-Login to MedBioNode.
+Login to MedBioNode. You will need conda/mamba.
 
 Setup a nextflow conda environment:
 
@@ -107,7 +110,7 @@ Setup a nextflow conda environment:
 conda create -c bioconda -c conda-forge nextflow
 ```
 
-Get the repo:
+Get the repository:
 
 ```bash []
 git clone https://github.com/dienerlab/nextflow_intro
@@ -204,6 +207,30 @@ Need to adjust the singularity config for isilon.
 
 singularity.runOptions = "--no-home -B /home/isilon/users/$USER,/home/gpfs/$USER,$TMPDIR"
 ```
+
+---
+
+<!-- .slide: data-background="var(--primary)" class="dark" -->
+
+## Where to get pipelines
+
+Public: https://nf-co.re/
+
+<br><br>
+
+### Lab pipelines
+
+https://github.com/dienerlab/pipelines
+
+✓⤫ = optimized for SLURM /
+✓✓ = optimized for SLURM and tested on MedBioNode
+
+16S amplicon ✓⤫ <br>
+Metagenomics: base ✓✓, binning ✓⤫, replication rates ✓⤫, simulation ✓⤫ <br>
+Metatranscriptomics: with MGX ✓⤫, <i>de novo</i> ✓⤫ <br>
+Isolates/Strains: assembly + phylo ✓⤫, replication rates ✓⤫ <br>
+Genome-scale metabolic model builder ✓⤫
+
 
 ---
 
