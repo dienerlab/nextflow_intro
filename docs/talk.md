@@ -102,7 +102,8 @@ Channels and processes get composed into a workflow.
 
 ## Let's get cookin'
 
-Login to MedBioNode. You will need conda/mamba.
+Login to MedBioNode. You will need conda/mamba there. On your local machine you
+would need conda and git.
 
 Setup a nextflow conda environment:
 
@@ -116,7 +117,7 @@ Get the repository:
 git clone https://github.com/dienerlab/nextflow_intro
 ```
 
-Let's have a look.
+Let's have *a look*.
 
 ---
 
@@ -232,6 +233,7 @@ Metagenomics: base ✓✓, binning ✓⤫, replication rates ✓⤫, simulation 
 Metatranscriptomics: with MGX ✓⤫, <i>de novo</i> ✓⤫ <br>
 Isolates/Strains: assembly + phylo ✓⤫, replication rates ✓⤫ <br>
 Genome-scale metabolic model builder ✓⤫
+MEDI ✓⤫
 
 
 ---
