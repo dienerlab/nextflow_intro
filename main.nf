@@ -8,10 +8,10 @@ process countThings {
     time "1m"
 
     input:
-    path(txt_file)
+    path txt_file
 
     output:
-    path("*.counts")
+    path "*.counts"
 
     """
     wc -${params.what[0]} ${txt_file} > ${txt_file}.counts
@@ -25,10 +25,10 @@ process average {
     publishDir "${launchDir}"
 
     input:
-    path(counts)
+    path counts
 
     output:
-    path("average.txt")
+    path "average.txt"
 
     """
     #!/usr/bin/env python3
@@ -47,9 +47,7 @@ process average {
 }
 
 workflow {
-    Channel
-        .fromPath("${launchDir}/shakespeare/*.txt")
-        .set{texts}
+    texts = Channel.fromPath("${launchDir}/shakespeare/*.txt")
 
     countThings(texts)
     average(countThings.out.collect())
