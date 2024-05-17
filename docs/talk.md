@@ -232,7 +232,7 @@ https://github.com/dienerlab/pipelines
 Metagenomics: base ✓✓, binning ✓⤫, replication rates ✓⤫, simulation ✓⤫ <br>
 Metatranscriptomics: with MGX ✓⤫, <i>de novo</i> ✓⤫ <br>
 Isolates/Strains: assembly + phylo ✓⤫, replication rates ✓⤫ <br>
-Genome-scale metabolic model builder ✓⤫
+Genome-scale metabolic model builder ✓⤫ <br>
 MEDI ✓⤫
 
 
